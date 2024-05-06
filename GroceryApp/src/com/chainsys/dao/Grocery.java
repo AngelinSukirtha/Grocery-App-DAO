@@ -339,15 +339,14 @@ public class Grocery extends Items implements GroceryApp {
 	public void quantityDetails() {
 		System.out.println(" ");
 		System.out.println("ENTER THE QUANTITY");
-		double q = sc.nextInt();
+		GroceryProject.quantity = sc.nextInt();
 		while (true) {
-			if (q > 0) {
-				ga.priceTotal = ga.priceTotal + (q * ga.price);
+			if (GroceryProject.quantity > 0) {
+				ga.priceTotal = (int) (ga.priceTotal + (ga.quantity * ga.price));
 				System.out.println("Your price amount is " + ga.priceTotal);
-
 			} else {
 				System.out.println("ENTER THE VALID DATA:");
-				q = sc.nextInt();
+				ga.quantity = sc.nextInt();
 			}
 			break;
 		}
@@ -365,20 +364,20 @@ public class Grocery extends Items implements GroceryApp {
 		}
 	}
 
-	public double discount() {
+	public int discount() {
 		if (ga.priceTotal > 0) {
 			if (ga.priceTotal > 1000) {
-				ga.discount = 0.1 * ga.priceTotal;
+				ga.discount = (int) (0.1 * ga.priceTotal);
 				ga.priceTotal2 = ga.priceTotal - ga.discount;
 				System.out.println("Congradulations! you get 10% discount");
 				System.out.println("Your price amount with discount is " + ga.priceTotal2);
 			} else if (ga.priceTotal > 5000) {
-				ga.discount = 0.3 * ga.priceTotal;
+				ga.discount = (int) (0.3 * ga.priceTotal);
 				ga.priceTotal2 = ga.priceTotal - ga.discount;
 				System.out.println("Congradulations! you get 30% discount");
 				System.out.println("Your price amount with discount is " + ga.priceTotal2);
 			} else if (ga.priceTotal > 10000) {
-				ga.discount = 0.9 * ga.priceTotal;
+				ga.discount = (int) (0.9 * ga.priceTotal);
 				ga.priceTotal2 = ga.priceTotal - ga.discount;
 				System.out.println("Congradulations! you get 90% discount");
 				System.out.println("Your price amount with discount is " + ga.priceTotal2);
@@ -392,10 +391,11 @@ public class Grocery extends Items implements GroceryApp {
 	}
 
 	public void totalAmount() {
-		double sgst = ga.priceTotal2 * 12 / 100;
-		System.out.println("\t\t\t\t\t\t\t\t\t" + "SGST (%): " + sgst);
-		double cgst = ga.priceTotal2 * 12 / 100;
-		System.out.println("\t\t\t\t\t\t\t\t\t" + "CGST (%): " + cgst);
-		System.out.println("\t\t\t\t\t\t\t\t" + "    " + "Total Amount: " + (ga.priceTotal2 + cgst + sgst));
+		ga.sgst = ga.priceTotal2 * 12 / 100;
+		System.out.println("\t\t\t\t\t\t\t\t\t" + "SGST (%): " + ga.sgst);
+		ga.cgst = ga.priceTotal2 * 12 / 100;
+		System.out.println("\t\t\t\t\t\t\t\t\t" + "CGST (%): " + ga.cgst);
+		ga.totalAmount = ga.priceTotal2 + ga.cgst + ga.sgst;
+		System.out.println("\t\t\t\t\t\t\t\t" + "    " + "Total Amount: " + ga.totalAmount);
 	}
 }
