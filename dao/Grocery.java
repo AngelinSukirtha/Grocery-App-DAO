@@ -1,19 +1,20 @@
 package com.chainsys.dao;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import com.chainsys.model.GroceryProject;
 
 public class Grocery extends Items implements GroceryApp {
 
 	Scanner sc = new Scanner(System.in);
-	GroceryProject ga = new GroceryProject();
+	GroceryProject gp = new GroceryProject();
 
 	public void categoryDetails() {
 		System.out.println(" ");
 		System.out.println("IN GROCER'S CHOICE WE HAVE" + "\n1.Fruits" + "\n2.Vegetables" + "\n3.Nuts"
 				+ "\n4.Stationery" + "\n5.Drinks" + "\n6.Grains");
 		System.out.println("CHOOSE YOUR CATEGORY FROM ABOVE");
-		String categoryInput = sc.nextLine();
+		String categoryInput = sc.next();
 
 		switch (categoryInput) {
 		case "Fruits":
@@ -68,286 +69,279 @@ public class Grocery extends Items implements GroceryApp {
 			System.out.println("NOT AVAILABLE");
 			System.out.println("ENTER THE VALID CATEGORY[Type exactly how it shows]");
 			categoryDetails();
-			break;
 		}
 	}
 
 	public void itemInput5() {
 		System.out.println("ENTER THE ITEM YOU WANT:");
-		String itemInput5 = sc.nextLine();
+		String itemInput5 = sc.next();
 
 		switch (itemInput5) {
 		case "Wheat":
 			System.out.println("You chose wheat from the Grains category.");
-			ga.price = 50;
-			System.out.println("Price is " + ga.price);
+			gp.price = 50;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Oats":
 			System.out.println("You chose oats from the Grains category.");
-			ga.price = 50;
-			System.out.println("Price is " + ga.price);
+			gp.price = 50;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Rice":
 			System.out.println("You chose rice from the Grains category.");
-			ga.price = 60;
-			System.out.println("Price is " + ga.price);
+			gp.price = 60;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Corn":
 			System.out.println("You chose corn from the Grains category.");
-			ga.price = 20;
-			System.out.println("Price is " + ga.price);
+			gp.price = 20;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Barley":
 			System.out.println("You chose barley from the Grains category.");
-			ga.price = 30;
-			System.out.println("Price is " + ga.price);
+			gp.price = 30;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Sorghum":
 			System.out.println("You chose sorghum from the Grains category.");
-			ga.price = 30;
-			System.out.println("Price is " + ga.price);
+			gp.price = 30;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Millet":
 			System.out.println("You chose millet from the Grains category.");
-			ga.price = 25;
-			System.out.println("Price is " + ga.price);
+			gp.price = 25;
+			System.out.println("Price is " + gp.price);
 			break;
 		default:
 			System.out.println("INVALID INPUT");
 			System.out.println("ENTER THE VALID INPUT[Type exactly how it shows]");
 			itemInput5();
-			break;
 		}
 	}
 
 	public void itemInput4() {
 		System.out.println("ENTER THE ITEM YOU WANT:");
-		String itemInput4 = sc.nextLine();
+		String itemInput4 = sc.next();
 
 		switch (itemInput4) {
 		case "Coca-Cola":
 			System.out.println("You chose Coca-Cola from the Drinks category.");
-			ga.price = 25;
-			System.out.println("Price is " + ga.price);
+			gp.price = 25;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Pepsi":
 			System.out.println("You chose Pepsi from the Drinks category.");
-			ga.price = 30;
-			System.out.println("Price is " + ga.price);
+			gp.price = 30;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Limca":
 			System.out.println("You chose Limca from the Drinks category.");
-			ga.price = 15;
-			System.out.println("Price is " + ga.price);
+			gp.price = 15;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Sprite":
 			System.out.println("You chose Sprite from the Drinks category.");
-			ga.price = 35;
-			System.out.println("Price is " + ga.price);
+			gp.price = 35;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Fanta":
 			System.out.println("You chose Fanta from the Drinks category.");
-			ga.price = 25;
-			System.out.println("Price is " + ga.price);
+			gp.price = 25;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Appy Fizz":
 			System.out.println("You chose Appy Fizz from the Drinks category.");
-			ga.price = 30;
-			System.out.println("Price is " + ga.price);
+			gp.price = 30;
+			System.out.println("Price is " + gp.price);
 			break;
 		default:
 			System.out.println("INVALID INPUT");
 			System.out.println("ENTER THE VALID INPUT[Type exactly how it shows]");
 			itemInput4();
-			break;
 		}
 	}
 
 	public void itemInput3() {
 		System.out.println("ENTER THE ITEM YOU WANT:");
-		String itemInput3 = sc.nextLine();
+		String itemInput3 = sc.next();
 
 		switch (itemInput3) {
 		case "Notebooks":
 			System.out.println("You chose notebooks from the Stationery category.");
-			ga.price = 50;
-			System.out.println("Price is " + ga.price);
+			gp.price = 50;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Diaries":
 			System.out.println("You chose diaries from the Stationery category.");
-			ga.price = 200;
-			System.out.println("Price is " + ga.price);
+			gp.price = 200;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Pen":
 			System.out.println("You chose pen from the Stationery category.");
-			ga.price = 20;
-			System.out.println("Price is " + ga.price);
+			gp.price = 20;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Pencils":
 			System.out.println("You chose pencils from the Stationery category.");
-			ga.price = 5;
-			System.out.println("Price is " + ga.price);
+			gp.price = 5;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Calculator":
 			System.out.println("You chose calculator from the Stationery category.");
-			ga.price = 500;
-			System.out.println("Price is " + ga.price);
+			gp.price = 500;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Punching Machine":
 			System.out.println("You chose punching machine from the Stationery category.");
-			ga.price = 600;
-			System.out.println("Price is " + ga.price);
+			gp.price = 600;
+			System.out.println("Price is " + gp.price);
 			break;
 		default:
 			System.out.println("INVALID INPUT");
 			System.out.println("ENTER THE VALID INPUT[Type exactly how it shows]");
 			itemInput3();
-			break;
 		}
 	}
 
 	public void itemInput2() {
 		System.out.println("ENTER THE ITEM YOU WANT:");
-		String itemInput2 = sc.nextLine();
+		String itemInput2 = sc.next();
 
 		switch (itemInput2) {
 		case "Almonds":
 			System.out.println("You chose almonds from the Nuts category.");
-			ga.price = 4;
-			System.out.println("Price is " + ga.price);
+			gp.price = 4;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Walnuts":
 			System.out.println("You chose walnuts from the Nuts category.");
-			ga.price = 5;
-			System.out.println("Price is " + ga.price);
+			gp.price = 5;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Pecans":
 			System.out.println("You chose pecans from the Nuts category.");
-			ga.price = 3;
-			System.out.println("Price is " + ga.price);
+			gp.price = 3;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Cashews":
 			System.out.println("You chose cashews from the Nuts category.");
-			ga.price = 8;
-			System.out.println("Price is " + ga.price);
+			gp.price = 8;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Hazelnuts":
 			System.out.println("You chose hazelnut from the Nuts category.");
-			ga.price = 10;
-			System.out.println("Price is " + ga.price);
+			gp.price = 10;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Peanuts":
 			System.out.println("You chose peanuts from the Nuts category.");
-			ga.price = 3;
-			System.out.println("Price is " + ga.price);
+			gp.price = 3;
+			System.out.println("Price is " + gp.price);
 			break;
 		default:
 			System.out.println("INVALID INPUT");
 			System.out.println("ENTER THE VALID INPUT[Type exactly how it shows]");
 			itemInput2();
-			break;
 		}
 	}
 
 	public void itemInput1() {
 		System.out.println("ENTER THE ITEM YOU WANT:");
-		String itemInput1 = sc.nextLine();
+		String itemInput1 = sc.next();
 
 		switch (itemInput1) {
 		case "Potato":
 			System.out.println("You chose potato from the Vegetables category.");
-			ga.price = 10;
-			System.out.println("Price is " + ga.price);
+			gp.price = 10;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Tomato":
 			System.out.println("You chose tomato from the Vegetables category.");
-			ga.price = 5;
-			System.out.println("Price is " + ga.price);
+			gp.price = 5;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Onion":
 			System.out.println("You chose onion from the Vegetables category.");
-			ga.price = 6;
-			System.out.println("Price is " + ga.price);
+			gp.price = 6;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Carrot":
 			System.out.println("You chose carrot from the Vegetables category.");
-			ga.price = 8;
-			System.out.println("Price is " + ga.price);
+			gp.price = 8;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Beetroot":
 			System.out.println("You chose beetroot from the Vegetables category.");
-			ga.price = 10;
-			System.out.println("Price is " + ga.price);
+			gp.price = 10;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Broccoli":
 			System.out.println("You chose broccoli from the Vegetables category.");
-			ga.price = 12;
-			System.out.println("Price is " + ga.price);
+			gp.price = 12;
+			System.out.println("Price is " + gp.price);
 			break;
 		default:
 			System.out.println("INVALID INPUT");
 			System.out.println("ENTER THE VALID INPUT[Type exactly how it shows]");
 			itemInput1();
-			break;
 		}
 	}
 
 	public void itemInput() {
 		System.out.println("ENTER THE ITEM YOU WANT:");
-		String itemInput = sc.nextLine();
+		String itemInput = sc.next();
 
 		switch (itemInput) {
 		case "Apple":
 			System.out.println("You chose Apple from the Fruits category.");
-			ga.price = 10;
-			System.out.println("Price is " + ga.price);
+			gp.price = 10;
+			System.out.println("Price is " + gp.price);
 
 			break;
 		case "Orange":
 			System.out.println("You chose orange from the Fruits category.");
-			ga.price = 12;
-			System.out.println("Price is " + ga.price);
+			gp.price = 12;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Grapes":
 			System.out.println("You chose grapes from the Fruits category.");
-			ga.price = 15;
-			System.out.println("Price is " + ga.price);
+			gp.price = 15;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Banana":
 			System.out.println("You chose banana from the Fruits category.");
-			ga.price = 6;
-			System.out.println("Price is " + ga.price);
+			gp.price = 6;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "Watermelon":
 			System.out.println("You chose Watermelon from the Fruits category.");
-			ga.price = 30;
-			System.out.println("Price is " + ga.price);
+			gp.price = 30;
+			System.out.println("Price is " + gp.price);
 			break;
 		case "PineApple":
 			System.out.println("You chose pineapple from the Fruits category.");
-			ga.price = 40;
-			System.out.println("Price is " + ga.price);
+			gp.price = 40;
+			System.out.println("Price is " + gp.price);
 			break;
 		default:
 			System.out.println("INVALID INPUT");
 			System.out.println("ENTER THE VALID INPUT[Type exactly how it shows]");
 			itemInput();
-			break;
 		}
 	}
 
 	public void quantityDetails() {
 		System.out.println(" ");
 		System.out.println("ENTER THE QUANTITY");
-		double q = sc.nextInt();
+		gp.quantity = sc.nextInt();
 		while (true) {
-			if (q > 0) {
-				ga.priceTotal = ga.priceTotal + (q * ga.price);
-				System.out.println("Your price amount is " + ga.priceTotal);
+			if (gp.quantity > 0) {
+				gp.priceTotal = gp.priceTotal + (gp.quantity * gp.price);
+				System.out.println("Your price amount is " + gp.priceTotal);
 
 			} else {
 				System.out.println("ENTER THE VALID DATA:");
-				q = sc.nextInt();
+				gp.quantity = sc.nextInt();
 			}
 			break;
 		}
@@ -365,37 +359,41 @@ public class Grocery extends Items implements GroceryApp {
 		}
 	}
 
-	public double discount() {
-		if (ga.priceTotal > 0) {
-			if (ga.priceTotal > 1000) {
-				ga.discount = 0.1 * ga.priceTotal;
-				ga.priceTotal2 = ga.priceTotal - ga.discount;
+	public int discount() {
+//		if (gp.priceTotal > 0) {
+		try {
+			if (gp.priceTotal > 1000) {
+				gp.discount = (int) (0.1 * gp.priceTotal);
+				GroceryProject.priceTotal2 = gp.priceTotal - gp.discount;
 				System.out.println("Congradulations! you get 10% discount");
-				System.out.println("Your price amount with discount is " + ga.priceTotal2);
-			} else if (ga.priceTotal > 5000) {
-				ga.discount = 0.3 * ga.priceTotal;
-				ga.priceTotal2 = ga.priceTotal - ga.discount;
+				System.out.println("Your price amount with discount is " + GroceryProject.priceTotal2);
+			} else if (gp.priceTotal > 5000) {
+				gp.discount = (int) (0.3 * gp.priceTotal);
+				GroceryProject.priceTotal2 = gp.priceTotal - gp.discount;
 				System.out.println("Congradulations! you get 30% discount");
-				System.out.println("Your price amount with discount is " + ga.priceTotal2);
-			} else if (ga.priceTotal > 10000) {
-				ga.discount = 0.9 * ga.priceTotal;
-				ga.priceTotal2 = ga.priceTotal - ga.discount;
+				System.out.println("Your price amount with discount is " + GroceryProject.priceTotal2);
+			} else if (gp.priceTotal > 10000) {
+				gp.discount = (int) (0.9 * gp.priceTotal);
+				GroceryProject.priceTotal2 = gp.priceTotal - gp.discount;
 				System.out.println("Congradulations! you get 90% discount");
-				System.out.println("Your price amount with discount is " + ga.priceTotal2);
+				System.out.println("Your price amount with discount is " + GroceryProject.priceTotal2);
 			} else {
-				ga.priceTotal2 = ga.priceTotal - ga.discount;
+				GroceryProject.priceTotal2 = gp.priceTotal - gp.discount;
 				System.out.println("NO DISCOUNT!!");
 			}
+		} catch (InputMismatchException e) {
+			System.out.println("Invalid");
 		}
-		System.out.println("\t\t\t\t\t\t\t\t" + "     " + "Final price: " + ga.priceTotal2);
-		return ga.priceTotal2;
+		System.out.println("\t\t\t\t\t\t\t\t" + "     " + "Final price: " + GroceryProject.priceTotal2);
+		return GroceryProject.priceTotal2;
 	}
 
 	public void totalAmount() {
-		double sgst = ga.priceTotal2 * 12 / 100;
-		System.out.println("\t\t\t\t\t\t\t\t\t" + "SGST (%): " + sgst);
-		double cgst = ga.priceTotal2 * 12 / 100;
-		System.out.println("\t\t\t\t\t\t\t\t\t" + "CGST (%): " + cgst);
-		System.out.println("\t\t\t\t\t\t\t\t" + "    " + "Total Amount: " + (ga.priceTotal2 + cgst + sgst));
+		GroceryProject.sgst = GroceryProject.priceTotal2 * 12 / 100;
+		System.out.println("\t\t\t\t\t\t\t\t\t" + "SGST (%): " + GroceryProject.sgst);
+		GroceryProject.cgst = GroceryProject.priceTotal2 * 12 / 100;
+		System.out.println("\t\t\t\t\t\t\t\t\t" + "CGST (%): " + GroceryProject.cgst);
+		GroceryProject.totalAmount = GroceryProject.sgst + GroceryProject.cgst + GroceryProject.priceTotal2;
+		System.out.println("\t\t\t\t\t\t\t\t" + "    " + "Total Amount: " + GroceryProject.totalAmount);
 	}
 }

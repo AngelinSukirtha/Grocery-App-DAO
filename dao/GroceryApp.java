@@ -17,4 +17,8 @@ public interface GroceryApp {
 
 	public void quantityDetails();
 
+	public int discount();
+
+	public void totalAmount();
+
 }
