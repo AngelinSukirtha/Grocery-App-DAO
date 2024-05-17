@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import com.chainsys.dao.Grocery;
 //import com.chainsys.dao.admin;
-
 import com.chainsys.util.GroceryConnection;
 import com.chainsys.model.GroceryProject;
 
@@ -19,7 +18,7 @@ public class TestGroceryApp extends GroceryConnection {
 			int entry = sc.nextInt();
 			switch (entry) {
 			case 1:
-				// admin.adminSignUp(id, name);
+				GroceryConnection.adminSide(userName1, password1);
 				break;
 			case 2:
 				GroceryConnection.signUp(userName, password, phoneNo, mailId);

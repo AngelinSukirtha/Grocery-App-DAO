@@ -1,9 +1,6 @@
 package com.chainsys.model;
 
-import java.util.Scanner;
-
 public class GroceryProject {
-	Scanner sc = new Scanner(System.in);
 	public int price;
 	public String category;
 	public int quantity;
@@ -23,230 +20,183 @@ public class GroceryProject {
 	public static int sgst;
 	public static int cgst;
 	public static int totalAmount;
-	public static String adminId;
-	public static String name;
-
-	public GroceryProject(String adminId, String name) {
+	public static String userName2;
+	public static String password2;
+	 
+	 public GroceryProject(int price, String category, int quantity, int discount, int priceTotal, int priceTotal1,
+			int totalPrice, String userName, String password, String phoneNo, String mailId, String userName1,
+			String password1, String phoneNo1, String mailId1, int priceTotal2, int sgst, int cgst, int totalAmount,
+			String userName2, String password2) {
 		super();
-		GroceryProject.adminId = adminId;
-		GroceryProject.name = name;
-	}
-
-	public static String getadminId() {
-		return adminId;
-	}
-
-	public static void setadminId(String adminId) {
-		GroceryProject.adminId = adminId;
-	}
-
-	public static String getName() {
-		return name;
-	}
-
-	public static void setName(String name) {
-		GroceryProject.name = name;
-	}
-
-	public static String getUserName1() {
-		return userName1;
-	}
-
-	public static void setUserName1(String userName1) {
+		this.price = price;
+		this.category = category;
+		this.quantity = quantity;
+		this.discount = discount;
+		this.priceTotal = priceTotal;
+		this.priceTotal1 = priceTotal1;
+		this.totalPrice = totalPrice;
+		GroceryProject.userName = userName;
+		GroceryProject.password = password;
+		GroceryProject.phoneNo = phoneNo;
+		GroceryProject.mailId = mailId;
 		GroceryProject.userName1 = userName1;
-	}
-
-	public static String getPassword1() {
-		return password1;
-	}
-
-	public static void setPassword1(String password1) {
 		GroceryProject.password1 = password1;
-	}
-
-	public static String getPhoneNo1() {
-		return phoneNo1;
-	}
-
-	public static void setPhoneNo1(String phoneNo1) {
 		GroceryProject.phoneNo1 = phoneNo1;
-	}
-
-	public static String getMailId1() {
-		return mailId1;
-	}
-
-	public static void setMailId1(String mailId1) {
 		GroceryProject.mailId1 = mailId1;
-	}
-
-	public GroceryProject(String mailId) {
-		GroceryProject.mailId = mailId;
-	}
-
-	public String getMailId() {
-		return mailId;
-	}
-
-	public void setMailId(String mailId) {
-		GroceryProject.mailId = mailId;
-	}
-
-	public GroceryProject(int sgst, int cgst, int totalAmount) {
+		GroceryProject.priceTotal2 = priceTotal2;
 		GroceryProject.sgst = sgst;
 		GroceryProject.cgst = cgst;
 		GroceryProject.totalAmount = totalAmount;
+		GroceryProject.userName2 = userName2;
+		GroceryProject.password2 = password2;
 	}
+	
 
 	public GroceryProject() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public int getSgst() {
-		return sgst;
-	}
-
-	public void setSgst(int sgst) {
-		GroceryProject.sgst = sgst;
-	}
-
-	public int getCgst() {
-		return cgst;
-	}
-
-	public void setCgst(int cgst) {
-		GroceryProject.cgst = cgst;
-	}
-
-	public int getTotalAmount() {
-		return totalAmount;
-	}
-
-	public void setTotalAmount(int totalAmount) {
-		GroceryProject.totalAmount = totalAmount;
-	}
-
-	public void GroceryApp(String phoneNo) {
-		GroceryProject.phoneNo = phoneNo;
-	}
-
-	public String getPhoneNo() {
-		return phoneNo;
-	}
-
-	public void setPhoneNo(String phoneNo) {
-		GroceryProject.phoneNo = phoneNo;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		GroceryProject.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		GroceryProject.password = password;
-	}
-
-	public void GroceryApp(int priceTotal, int priceTotal2, int totalPrice, int priceTotal1) {
-		this.priceTotal = priceTotal;
-		GroceryProject.priceTotal2 = priceTotal2;
-		this.totalPrice = totalPrice;
-		this.priceTotal1 = priceTotal1;
-	}
-
-	public double getPriceTotal() {
-		return priceTotal;
-	}
-
-	public void setPriceTotal(int priceTotal) {
-		this.priceTotal = priceTotal;
-	}
-
-	public double getPriceTotal2() {
-		return priceTotal2;
-	}
-
-	public void setPriceTotal2(int priceTotal2) {
-		GroceryProject.priceTotal2 = priceTotal2;
-	}
-
-	public double getTotalPrice() {
-		return totalPrice;
-	}
-
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public int getPriceTotal1() {
-		return priceTotal1;
-	}
-
-	public void setPriceTotal1(int priceTotal1) {
-		this.priceTotal1 = priceTotal1;
-	}
-
-	public void GroceryApp1(int discount) {
-
-		this.discount = discount;
-	}
-
-	public int getDiscount() {
-		return discount;
-	}
-
-	public void setDiscount(int discount) {
-		this.discount = discount;
-	}
-
-	public void GroceryApp(int quantity) {
-		this.quantity = quantity;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
 
 	@Override
 	public String toString() {
-		return "GroceryProject [adminId=" + adminId + ", name=" + name + ", getMailId()=" + getMailId() + ", getSgst()="
-				+ getSgst() + ", getCgst()=" + getCgst() + ", getTotalAmount()=" + getTotalAmount() + ", getPhoneNo()="
-				+ getPhoneNo() + ", getUserName()=" + getUserName() + ", getPassword()=" + getPassword()
-				+ ", getPriceTotal()=" + getPriceTotal() + ", getPriceTotal2()=" + getPriceTotal2()
-				+ ", getTotalPrice()=" + getTotalPrice() + ", getPriceTotal1()=" + getPriceTotal1() + ", getDiscount()="
-				+ getDiscount() + ", getQuantity()=" + getQuantity() + ", getPrice()=" + getPrice() + ", getCategory()="
-				+ getCategory() + "]";
+		return "GroceryProject [price=" + price + ", category=" + category + ", quantity=" + quantity + ", discount="
+				+ discount + ", priceTotal=" + priceTotal + ", priceTotal1=" + priceTotal1 + ", totalPrice="
+				+ totalPrice + ", userName=" + userName + ", password=" + password + ", phoneNo=" + phoneNo
+				+ ", mailId=" + mailId + ", userName1=" + userName1 + ", password1=" + password1 + ", phoneNo1="
+				+ phoneNo1 + ", mailId1=" + mailId1 + ", priceTotal2=" + priceTotal2 + ", sgst=" + sgst + ", cgst="
+				+ cgst + ", totalAmount=" + totalAmount + ", userName2=" + userName2 + ", password2=" + password2
+				+ ", getPrice()=" + getPrice() + ", getCategory()=" + getCategory() + ", getQuantity()=" + getQuantity()
+				+ ", getDiscount()=" + getDiscount() + ", getPriceTotal()=" + getPriceTotal() + ", getPriceTotal1()="
+				+ getPriceTotal1() + ", getTotalPrice()=" + getTotalPrice() + "]";
 	}
-
-	public void GroceryApp(int price, String category) {
+	
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
 		this.price = price;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
 		this.category = category;
 	}
-
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+	public int getPriceTotal() {
+		return priceTotal;
+	}
+	public void setPriceTotal(int priceTotal) {
+		this.priceTotal = priceTotal;
+	}
+	public int getPriceTotal1() {
+		return priceTotal1;
+	}
+	public void setPriceTotal1(int priceTotal1) {
+		this.priceTotal1 = priceTotal1;
+	}
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+	public static String getUserName() {
+		return userName;
+	}
+	public static void setUserName(String userName) {
+		GroceryProject.userName = userName;
+	}
+	public static String getPassword() {
+		return password;
+	}
+	public static void setPassword(String password) {
+		GroceryProject.password = password;
+	}
+	public static String getPhoneNo() {
+		return phoneNo;
+	}
+	public static void setPhoneNo(String phoneNo) {
+		GroceryProject.phoneNo = phoneNo;
+	}
+	public static String getMailId() {
+		return mailId;
+	}
+	public static void setMailId(String mailId) {
+		GroceryProject.mailId = mailId;
+	}
+	public static String getUserName1() {
+		return userName1;
+	}
+	public static void setUserName1(String userName1) {
+		GroceryProject.userName1 = userName1;
+	}
+	public static String getPassword1() {
+		return password1;
+	}
+	public static void setPassword1(String password1) {
+		GroceryProject.password1 = password1;
+	}
+	public static String getPhoneNo1() {
+		return phoneNo1;
+	}
+	public static void setPhoneNo1(String phoneNo1) {
+		GroceryProject.phoneNo1 = phoneNo1;
+	}
+	public static String getMailId1() {
+		return mailId1;
+	}
+	public static void setMailId1(String mailId1) {
+		GroceryProject.mailId1 = mailId1;
+	}
+	public static int getPriceTotal2() {
+		return priceTotal2;
+	}
+	public static void setPriceTotal2(int priceTotal2) {
+		GroceryProject.priceTotal2 = priceTotal2;
+	}
+	public static int getSgst() {
+		return sgst;
+	}
+	public static void setSgst(int sgst) {
+		GroceryProject.sgst = sgst;
+	}
+	public static int getCgst() {
+		return cgst;
+	}
+	public static void setCgst(int cgst) {
+		GroceryProject.cgst = cgst;
+	}
+	public static int getTotalAmount() {
+		return totalAmount;
+	}
+	public static void setTotalAmount(int totalAmount) {
+		GroceryProject.totalAmount = totalAmount;
+	}
+	public static String getUserName2() {
+		return userName2;
+	}
+	public static void setUserName2(String userName2) {
+		GroceryProject.userName2 = userName2;
+	}
+	public static String getPassword2() {
+		return password2;
+	}
+	public static void setPassword2(String password2) {
+		GroceryProject.password2 = password2;
+	}
+	
 }
+	
+	

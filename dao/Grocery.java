@@ -44,7 +44,7 @@ public class Grocery extends Items implements GroceryApp {
 		case "Stationery":
 			System.out.println("AVAILABLE ITEMS");
 			System.out.println("1.Notebooks" + "\n2.Diaries" + "\n3.Pen" + "\n4.Pencils" + "\n5.Calculator"
-					+ "\n6.Punching Machine");
+					+ "\n6.PunchingMachine");
 			itemInput3();
 			break;
 
@@ -52,7 +52,7 @@ public class Grocery extends Items implements GroceryApp {
 			System.out.println(" ");
 			System.out.println("AVAILABLE ITEMS");
 			System.out
-					.println("1.Coca-Cola" + "\n2.Pepsi" + "\n3.Limca" + "\n4.Sprite" + "\n5.Fanta" + "\n6.Appy Fizz");
+					.println("1.Coca-Cola" + "\n2.Pepsi" + "\n3.Limca" + "\n4.Sprite" + "\n5.Fanta" + "\n6.AppyFizz");
 			itemInput4();
 			break;
 
@@ -149,7 +149,7 @@ public class Grocery extends Items implements GroceryApp {
 			gp.price = 25;
 			System.out.println("Price is " + gp.price);
 			break;
-		case "Appy Fizz":
+		case "AppyFizz":
 			System.out.println("You chose Appy Fizz from the Drinks category.");
 			gp.price = 30;
 			System.out.println("Price is " + gp.price);
@@ -191,7 +191,7 @@ public class Grocery extends Items implements GroceryApp {
 			gp.price = 500;
 			System.out.println("Price is " + gp.price);
 			break;
-		case "Punching Machine":
+		case "PunchingMachine":
 			System.out.println("You chose punching machine from the Stationery category.");
 			gp.price = 600;
 			System.out.println("Price is " + gp.price);
@@ -360,7 +360,6 @@ public class Grocery extends Items implements GroceryApp {
 	}
 
 	public int discount() {
-//		if (gp.priceTotal > 0) {
 		try {
 			if (gp.priceTotal > 1000) {
 				gp.discount = (int) (0.1 * gp.priceTotal);
