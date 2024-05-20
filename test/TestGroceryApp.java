@@ -2,15 +2,13 @@ package com.chainsys.test;
 
 import java.sql.SQLException;
 import java.util.Scanner;
-import com.chainsys.dao.Grocery;
-//import com.chainsys.dao.admin;
-import com.chainsys.util.GroceryConnection;
-import com.chainsys.model.GroceryProject;
+import com.chainsys.dao.*;
+import com.chainsys.model.GroceryProjectA;
+import com.chainsys.util.*;
 
 public class TestGroceryApp extends GroceryConnection {
 
 	static Scanner sc = new Scanner(System.in);
-	static GroceryProject gp = new GroceryProject();
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		while (true) {
@@ -19,6 +17,13 @@ public class TestGroceryApp extends GroceryConnection {
 			switch (entry) {
 			case 1:
 				GroceryConnection.adminSide(userName1, password1);
+				System.out.println(" ");
+				AdminConnection.readCategories(GroceryProjectA.fruits, GroceryProjectA.vegetables, GroceryProjectA.nuts,
+						GroceryProjectA.stationery, GroceryProjectA.drinks, GroceryProjectA.grains);
+				AdminConnection.manageCategories(GroceryProjectA.fruits, GroceryProjectA.vegetables,
+						GroceryProjectA.nuts, GroceryProjectA.stationery, GroceryProjectA.drinks,
+						GroceryProjectA.grains);
+				AdminConnection.adminDelete();
 				break;
 			case 2:
 				GroceryConnection.signUp(userName, password, phoneNo, mailId);
@@ -40,8 +45,12 @@ public class TestGroceryApp extends GroceryConnection {
 						"-------------------------------------------------------------------------------------------------");
 				app.discount();
 				app.totalAmount();
-				System.out.println(" ");
 				GroceryConnection.insertBusinessLogics(priceTotal2, sgst, cgst, totalAmount);
+				System.out.println(" ");
+				Customer.ratings();
+				System.out.println(" ");
+				CustomerConnection.ratingsSystem(totalAmount, GroceryProjectA.ratings);
+				System.out.println(" ");
 				GroceryConnection.read(priceTotal2, sgst, cgst, totalAmount);
 				System.out.println(" ");
 				System.out.println("\t\t" + "              THANK YOU!! COME AGAIN");

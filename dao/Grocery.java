@@ -60,7 +60,7 @@ public class Grocery extends Items implements GroceryApp {
 			System.out.println(" ");
 			System.out.println("AVAILABLE ITEMS");
 			System.out.println(
-					"1.Wheat" + "\n2.Oats" + "\n3.Rice" + "\n4.Corn" + "\n5.Barley" + "\n6.Sorghum" + "\n7.Millet");
+					"1.Wheat" + "\n2.Oats" + "\n3.Rice" + "\n4.Corn" + "\n5.Barley" + "\n6.Sorghum");
 			itemInput5();
 			break;
 
@@ -105,11 +105,6 @@ public class Grocery extends Items implements GroceryApp {
 		case "Sorghum":
 			System.out.println("You chose sorghum from the Grains category.");
 			gp.price = 30;
-			System.out.println("Price is " + gp.price);
-			break;
-		case "Millet":
-			System.out.println("You chose millet from the Grains category.");
-			gp.price = 25;
 			System.out.println("Price is " + gp.price);
 			break;
 		default:
