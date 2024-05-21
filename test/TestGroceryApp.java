@@ -23,12 +23,20 @@ public class TestGroceryApp extends GroceryConnection {
 				AdminConnection.manageCategories(GroceryProjectA.fruits, GroceryProjectA.vegetables,
 						GroceryProjectA.nuts, GroceryProjectA.stationery, GroceryProjectA.drinks,
 						GroceryProjectA.grains);
+				System.out.println(" ");
 				AdminConnection.adminDelete();
+				System.out.println(" ");
+				AdminConnection.retrievePaymentDetails();
 				break;
 			case 2:
-				GroceryConnection.signUp(userName, password, phoneNo, mailId);
-				GroceryConnection.insertDetails(userName, password, phoneNo, mailId, userName1, password1, phoneNo1,
-						mailId1);
+				System.out.println("Do you have an account?[y for yes (or) n for no]: ");
+				char choice = sc.next().charAt(0);
+				if (choice == 'y') {
+					GroceryConnection.insertDetails(userName, password);
+				} else {
+					GroceryConnection.signUp(userName, password, phoneNo, mailId);
+					GroceryConnection.insertDetails(userName, password);
+				}
 
 				System.out.println(
 						"-------------------------------------------------------------------------------------------------");
@@ -46,6 +54,9 @@ public class TestGroceryApp extends GroceryConnection {
 				app.discount();
 				app.totalAmount();
 				GroceryConnection.insertBusinessLogics(priceTotal2, sgst, cgst, totalAmount);
+				System.out.println(" ");
+				CustomerConnection.insertPaymentDetails(GroceryProjectA.paymentMode, GroceryProjectA.orderId,
+						GroceryProjectA.cardNumber, GroceryProjectA.expirationDate);
 				System.out.println(" ");
 				Customer.ratings();
 				System.out.println(" ");

@@ -184,7 +184,7 @@ public class GroceryConnection extends GroceryProject {
 			} else {
 				System.out.print("INVALID USERNAME\n");
 				System.out.println("Enter the Username: " + "\n[Username must have upper case,lower case,and digits]");
-				userName = sc.next();
+				userName2 = sc.next();
 			}
 		}
 		System.out.println(
@@ -198,7 +198,7 @@ public class GroceryConnection extends GroceryProject {
 				System.out.print("INVALID PASSWORD\n");
 				System.out.println("Enter the password: "
 						+ "\n[password must have upper case,lower case,special characters and digits]");
-				password = sc.next();
+				password2 = sc.next();
 			}
 		}
 		Connection connection = GroceryConnection.getConnection();
@@ -211,7 +211,7 @@ public class GroceryConnection extends GroceryProject {
 			if (resultSet.next()) {
 				System.out.println("Login successful!");
 			} else {
-				System.out.println("Username or password incorrect. Access denied.\n"+"Please enter valid details");
+				System.out.println("Username or password incorrect. Access denied.\n" + "Please enter valid details");
 				adminSide(userName1, password1);
 			}
 			resultSet.close();
@@ -221,4 +221,56 @@ public class GroceryConnection extends GroceryProject {
 			e.printStackTrace();
 		}
 	}
+
+	public static void insertDetails(String userName, String password) throws ClassNotFoundException, SQLException {
+		System.out.println("\t\t\t" + "              *LOGIN*");
+		System.out.println("Enter the Username: " + "\n[Username must have upper case,lower case,and digits]");
+		userName1 = sc.next();
+		while (true) {
+			if (userName1.matches("^[a-z A-Z 0-9]{6,}$")) {
+				GroceryProject.setUserName(userName1);
+				break;
+			} else {
+				System.out.print("INVALID USERNAME\n");
+				System.out.println("Enter the Username: " + "\n[Username must have upper case,lower case,and digits]");
+				userName1 = sc.next();
+			}
+		}
+		System.out.println(
+				"Enter the password: " + "\n[password must have upper case,lower case,special characters and digits]");
+		password1 = sc.next();
+//		while (true) {
+//			if (password1.matches("^[a-z A-Z][@#$%^&*][0-9]{2,}$")) {
+//				GroceryProject.setPassword(password1);
+//				break;
+//			} else {
+//				System.out.print("INVALID PASSWORD\n");
+//				System.out.println("Enter the password: "
+//						+ "\n[password must have upper case,lower case,special characters and digits]");
+//				password1 = sc.next();
+//			}
+//		}
+
+		Connection connection = GroceryConnection.getConnection();
+		try {
+			String query = "SELECT * FROM groceryappproject WHERE userName = ? AND password = ?";
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, userName1);
+			preparedStatement.setString(2, password1);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				System.out.println("Login successful!");
+			} else {
+				System.out.println(
+						"Username or password incorrect. You don't have an account\n" + "Please register first");
+				insertDetails(userName, password);
+			}
+			resultSet.close();
+			preparedStatement.close();
+		} catch (SQLException e) {
+			System.out.println("Please enter valid details");
+			e.printStackTrace();
+		}
+	}
+
 }

@@ -8,7 +8,6 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
-
 import com.chainsys.model.GroceryProjectA;
 
 public class AdminConnection {
@@ -72,7 +71,7 @@ public class AdminConnection {
 
 	public static void readCategories(String fruits, String vegetables, String nuts, String stationery, String drinks,
 			String grains) throws ClassNotFoundException, SQLException {
-		System.out.println("\t\t" + "              *Available Stocks*\n");
+		System.out.println("\t\t" + "              *AVAILABLE STOCKS*\n");
 		Connection connection = GroceryConnection.getConnection();
 		String read = "select * from adminManagement";
 		PreparedStatement p = connection.prepareStatement(read);
@@ -104,4 +103,29 @@ public class AdminConnection {
 		connection.close();
 		rows.close();
 	}
+
+	public static void retrievePaymentDetails() throws ClassNotFoundException {
+		System.out.println("\t\t" + "              *PAYMENT DETAILS*");
+		try {
+			Connection connection = getConnection();
+			String read = "select * from payment where orderId>0";
+			Statement stmt = connection.createStatement();
+			ResultSet rows = stmt.executeQuery(read);
+			while (rows.next()) {
+				int orderId = rows.getInt("orderId");
+				String paymentMode = rows.getString("paymentMode");
+				String cardNumber = rows.getString("cardNumber");
+				String expirationDate = rows.getString("expirationDate");
+				System.out.println("Order Id: " + orderId + "\nPayment Mode: " + paymentMode + "\nCard Number: "
+						+ cardNumber + "\nExpiration Date: " + expirationDate);
+				System.out.println(" ");
+			}
+			System.out.println(rows + "rows retrived");
+			connection.close();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
